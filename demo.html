@@ -1,7 +1,38 @@
 <html>
 
 <head>
+  <script type="text/javascript" src="selfish.js" ></script>
+  <script type="text/javascript" src="doubleLinkedList.js" ></script>
 
+  <script type="text/javascript">
+
+    var mylist = DoubleLinkedList.new();
+    
+    var node1 = mylist.insertEnd(DoubleLinkedNode.new("test1"));
+    var node2 = mylist.insertObjectEnd("test2");
+    var node3 = mylist.insertEnd(DoubleLinkedNode.new({name:"test3"}));
+    var node4 = mylist.insertEnd(DoubleLinkedNode.new("test4"));
+    
+    
+    debug(mylist);
+    
+    //mylist.remove(node3);
+    var success = mylist.removeObject({name:"test3"});
+    console.debug(success);
+    
+    debug(mylist);
+     
+    function debug(list){
+        var node = list.firstNode;
+    
+        while (node !== null){
+            console.debug(node);
+            node = node.next;
+        }
+    
+    }
+
+  </script>
 </head>
 
 <body>
