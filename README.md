@@ -5,8 +5,10 @@ This is a javascript doubled linked List class.
 
 Construct a new List : 
 ----------------------
+
 ```javascript
 var mylist = DoubleLinkedList.new();
+```
 
 Construct a new Linked Node
 ---------------------------
@@ -43,9 +45,7 @@ myLinkedList.insertEnd(newNode);
 
 Insert a DoubleLinkedNode, refering to an existing DoubleLinkedNode
 -------------------------------------------------------------------
-insertBeginning(newNode)
-insertBefore(node, newNode);
-insertAfter(node, newNode);
+
 
 ```javascript
 var myLinkedList = DoubleLinkedList.new();
@@ -120,9 +120,44 @@ searchedNode = myLinkedList.search({name : "I am a js Object"});
 Multiple Inheritance with selfjs
 ================================
 
-TODO
+You can inherit an object with a DoubleLinkedNode , and transform it into a node element. 
+This way, you won't have to access the stored object with the node.data property anymnore.
 
 
+```javascript
+var formula1 = DoubleLinkedNode.extend({
+     
+     initialize : function(manufacturerName, pilotName, points){
+        this.manufacturerName = manufacturerName;
+        this.pilotName = pilotName;
+        this.points = points;
+     }
+);
+
+//F1 world ranking mid october 2013
+var ranking = DoubleLinkedList.new();
+
+
+var vettelNode = ranking.insertBeginning( formula1.new("S.Vettel", "Red Bull Racing", 247);
+
+var alonsoNode = ranking.insertEnd( formula1.new( "F.Alonso", "Ferreri", 187);
+//or
+var alonsoNode = ranking.insertAfter( vettelNode,  formula1.new( "F.Alonso", "Ferreri", 187);
+
+var hamiltonNode = ranking.insertEnd( formula1.new( "L.Hamilton", "Mercedes Benz", 151);
+var lotusNode = ranking.insertEnd( formula1.new( "K.Raikkonen", "Lotus", 149);
+var webberNode = ranking.insertEnd( formula1.new( "M.Webber", "Red Bull Racing", 130);
+var rosebergNode = ranking.insertEnd( formula1.new( "N.Roseberg", "Mercedes Benz", 116);
+//to continue....
+```
+
+
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
