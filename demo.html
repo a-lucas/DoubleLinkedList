@@ -6,18 +6,38 @@
 
   <script type="text/javascript">
 
+	//Initialize the selfish way a new list
     var mylist = DoubleLinkedList.new();
     
-    var node1 = mylist.insertEnd(DoubleLinkedNode.new("test1"));
+    //add the string "test1" at the end of the list
+    var node1 = mylist.insertEnd( DoubleLinkedNode.new("test1") );
+    //add the string "test2" at the end of the list
     var node2 = mylist.insertObjectEnd("test2");
+    //add the object {name:"test3"} at the end of the list
     var node3 = mylist.insertEnd(DoubleLinkedNode.new({name:"test3"}));
-    var node4 = mylist.insertEnd(DoubleLinkedNode.new("test4"));
+    
+    //At this stage, the list will be : 
+    //  - "test1"
+    //	- "test2"
+    //	- {name:"test3"}
+    
+    
+    //Will insert the object { name : "test2b" after the node2
+    var node2b = mylist.insertAfter(node2, { name : "test2b" });
+    
+    // Will lookup for the first object { name : "test2b" }, and will insert after it the object { name : "test2c" }
+    var node2c = mylist.insertObjectAfter({ name : "test2b" }, { name : "test2c" });
+    
+    
     
     
     debug(mylist);
     
     //mylist.remove(node3);
+    
+    
     var success = mylist.removeObject({name:"test3"});
+    
     console.debug(success);
     
     debug(mylist);

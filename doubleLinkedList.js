@@ -141,7 +141,7 @@ var DoubleLinkedList = Base.extend({
       * @param {Object} newObject
       * @returns {DoublyLinkedNode}
       */
-     insertObjectBeginning : function(newNode){
+     insertObjectBeginning : function(newObject){
         var newNode = DoubleLinkedNode.new(newObject);
         this.insertBeginning(newNode);
         return newNode;
