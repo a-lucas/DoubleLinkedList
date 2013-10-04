@@ -75,10 +75,6 @@ This won't work if you have equal objects.
 Insert a new Object in the list
 -------------------------------
 
-myLinkedList.insertObjectBeginning(Object)
-myLinkedList.insertObjectEnd(Object)
-myLinkedList.insertObjectBefore(Object, newObject)
-myLinkedList.insertObjectAfter(Object, newObject)
 
 ```javascript
 var myLinkedList = DoubleLinkedList.new();
@@ -86,13 +82,13 @@ var node1 = myLinkedList.insertObjectBeginning({name : "I am a js Object"});
 var node2 = myLinkedList.insertObjectEnd( {name : "I am another js Object"} );
 var node3 = myLinkedList.insertObjectBefore(  {name : "I am another js Object"} ,  {name : "I will be inserted before node2"}  );
 var node4 = myLinkedList.insertObjectAfter(  {name : "I am another js Object"} ,  {name : "I will be inserted after node2"}  );
-```
-At this stage, the list contains : 
-position 0 => node1 : {name : "I am a js Object"}
-position 1 => node3 : {name : "I will be inserted before node2"} 
-position 2 => node2 : {name : "I am another js Object"}
-position 3 => node4 : {name : "I will be inserted after node2"}
 
+//At this stage, the list contains : 
+//position 0 => node1 : {name : "I am a js Object"}
+//position 1 => node3 : {name : "I will be inserted before node2"} 
+//position 2 => node2 : {name : "I am another js Object"}
+//position 3 => node4 : {name : "I will be inserted after node2"}
+```
 
 remove an Object from the list
 ------------------------------
@@ -121,7 +117,7 @@ Multiple Inheritance with selfjs
 ================================
 
 You can inherit an object with a DoubleLinkedNode , and transform it into a node element. 
-This way, you won't have to access the stored object with the node.data property anymnore.
+This way, you won't have to access the stored object with the node.data property.
 
 
 ```javascript
