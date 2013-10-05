@@ -41,6 +41,9 @@ var myLinkedList = DoubleLinkedList.new();
 var newNode = DoubleLinkedNode.new("I am a node");
 myLinkedList.insertBeginning(newNode);
 myLinkedList.insertEnd(newNode);
+
+
+
 ```
 
 Insert a DoubleLinkedNode, refering to an existing DoubleLinkedNode
@@ -51,6 +54,27 @@ Insert a DoubleLinkedNode, refering to an existing DoubleLinkedNode
 var myLinkedList = DoubleLinkedList.new();
 var node = DoubleLinkedNode.new("I will be inserted in the list very soon");
 DoubleLinkedList.insertBeginning(node);
+
+
+DoubleLinkedNode's Properties
+------------------------------
+
+
+```javascript
+Public var next
+Public var prev
+var index
+`````
+
+node2.next = Layout1  <=>   Layout1 = node2.next
+node2.prev = Container <=> Container = node2.prev
+
+
+node2.index (for arrays) , Gives
+
+
+
+
 
 var newNode = DoubleLinkedNode.new("I am a node, and will be inserted before and after 'node'");
 DoubleLinkedList.insertBefore(node, newNode);
